@@ -12,3 +12,12 @@ $ java Test
 **included**
 - implementation of optimized trial division 
 - deterministic Miller primality test
+
+```java
+import primality.Prime
+...
+    Prime p = new Prime();
+    p.set(3829138120L);
+    
+    System.out.println(p.isPrime());
+```

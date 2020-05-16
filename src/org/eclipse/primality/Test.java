@@ -11,17 +11,10 @@ public class Test {
 	
 	public static void main (String[] args) {
 		
-		// numbers to test
-		testNumbers = new long[] {
-				481232109, 
-				770219231, 
-				5381,
-				23918221039111L};
-		
 		// create instance of the primality tester
 		Prime p = new Prime();
 		
-		for (long n : testNumbers) {
+		for (long n : new long[] {5381L}) {
 			p.set(n);
 			System.out.println(p.isPrime());	
 		}

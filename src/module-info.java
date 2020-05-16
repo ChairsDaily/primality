@@ -2,7 +2,7 @@
  * @description simple primality test functions in JavaSE-11
  * @author chairs
  * @license MIT
- * @email chairs.daily.2019, gmail
+ * @email chairs.daily.2019, GMail
  */
 module primality {
 	requires java.base;

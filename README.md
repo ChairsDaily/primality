@@ -14,7 +14,7 @@ $ java Test
 - deterministic Miller primality test
 
 ```java
-import primality.Prime
+import primality.Prime;
 ...
     Prime p = new Prime();
     p.set(3829138120L);

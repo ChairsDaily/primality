@@ -8,3 +8,7 @@ $ javac Prime.java Test.java
 ...
 $ java Test
 ```
+
+**included**
+- implementation of optimized trial division 
+- deterministic Miller primality test

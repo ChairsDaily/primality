@@ -7,7 +7,7 @@
 module primality {
 	requires java.base;
 	exports org.eclipse.primality;
-	version "JavaSE-11";
+	version 11;
 	// java.lang.Math
 }
 

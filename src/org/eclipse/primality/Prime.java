@@ -3,6 +3,8 @@ package org.eclipse.primality;
 
 import java.lang.Math;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -13,15 +15,13 @@ import java.util.ArrayList;
  * @license MIT
  * @email chairs.daily.2019@gmail.com
  */
-public final class Prime2 {
+public final class Prime {
 
-	private static long[] smallPrimes = {
-		
-		// should be expanded with a prime number sieve
-		2, 3, 5, 7, 11, 13, 17, 19, 
-		23, 29, 31, 37, 41, 43, 47, 
-		53, 59, 61, 67, 71, 73, 79, 
-		83, 89, 97};
+	private static ArrayList<Long> smallPrimes = new ArrayList<Long>(Arrays.asList(
+	
+			2L, 3L, 5L, 7L, 11L, 17L, 19L, 23L, 29L, 31L,
+			31L, 37L, 41L, 43L, 47L, 53L, 59L, 61L, 67L, 
+			71L, 73L, 79L, 83L, 89L, 97L));
 	
 	/*
 	 * Finds a divisor using smallPrimes as candidates
@@ -73,12 +73,31 @@ public final class Prime2 {
 		long count = 0; // number of times 2 divides n
 		
 		int upper = 2 * (int) (logn * Math.log(logn)/Math.log(2));
-		ArrayList<Long> witnesses = new ArrayList<Long>();
+		ArrayList<Long> witnesses;
 		
-		// populate witness list with proven best range
-		// of test coefficients
-		for (long i = 2; i < upper + 1; i++) 
-			witnesses.add(i);
+		if (number < 341550071728321L) witnesses = witnessFilter(0, 6);
+		if (number < 3474749660383L) witnesses = witnessFilter(0, 5);
+		if (number < 2152302898747L) witnesses = witnessFilter(0, 4);
+		
+		if (number < 1122004669633L) witnesses = new ArrayList<Long>(
+				Arrays.asList(2L, 13L, 23L, 1662803L));
+		if (number < 4759123141L) witnesses = new ArrayList<Long>(
+				Arrays.asList(2L, 7L, 61L));
+		
+		if (number < 3215031751L) witnesses = witnessFilter(0, 3);
+		if (number < 25326001L) witnesses = witnessFilter(0, 2);
+		
+		if (number < 9080191L) witnesses = new ArrayList<Long>(
+				Arrays.asList(31L, 73L));
+		if (number < 1373653L) witnesses = witnessFilter(0, 1);
+		if (number < 2047L) witnesses = witnessFilter(0, 0);
+		else
+			witnesses = new ArrayList<Long>();
+		
+			// populate witness list with proven best range
+			// of test coefficients
+			for (long i = 2; i < upper + 1; i++) 
+				witnesses.add(i);
 		
 		// remove all factors of 2 from m, not n
 		do {
@@ -106,6 +125,18 @@ public final class Prime2 {
 			prime = negative;
 		}
 		return prime;
+	}
+	
+
+	/*
+	 * Helper method for millerRabinTest, generates a witness range
+	 * using some proven constants from wikipedia to improve speed
+	 * @param .number target number
+	 * @return .witnesses best witnesses to use for a miller test
+	 */
+	private static ArrayList<Long> witnessFilter (int start, int end) {
+		
+		return new ArrayList<Long>(smallPrimes.subList(start, end));	
 	}
 	
 	/*

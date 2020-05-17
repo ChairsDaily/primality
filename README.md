@@ -3,10 +3,9 @@ primality testing for big numbers in Java - just exercising lang usage
 
 **to recompile source tree**
 ```
-$ cd src/org/eclipse/
-$ javac primality/*.java
+$ sh build.sh
 ...
-$ java Test
+$ java bin/org/eclipse/primality/Test
 ```
 
 **included**

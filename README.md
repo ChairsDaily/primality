@@ -15,10 +15,7 @@ $ java bin/org/eclipse/primality/Test
 the former will run for numbers under a certain size `primality.Prime.threshold`.
 
 ```java
-import primality.Prime;
+import primality.Prime2;
 ...
-    Prime p = new Prime();
-    p.set(3829138120L);
-    
-    System.out.println(p.isPrime());
+    final boolean prime = Prime2.isPrime(3829138120L);
 ```

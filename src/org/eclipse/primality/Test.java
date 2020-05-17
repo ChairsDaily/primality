@@ -1,23 +1,18 @@
 
 package org.eclipse.primality;
 
-/*
- * Simple test for the primality class
- * @author chairs
+/**
+ * testing our utility class
+ * 
+ * @author ChairsDaily
+ * @license MIT
+ * @email chairs.daily.2019@gmail.com
  */
 public class Test {
 	
-	private static long[] testNumbers;
-	
 	public static void main (String[] args) {
 		
-		// create instance of the primality tester
-		Prime p = new Prime();
-		
-		for (long n : new long[] {5381L}) {
-			p.set(n);
-			System.out.println(p.isPrime());	
-		}
+		for (long n : new long[] {53813425671L}) System.out.println(Prime2.isPrime(n));	
 	}
 }
 

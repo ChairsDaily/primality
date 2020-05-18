@@ -12,7 +12,7 @@ public class Test {
 	
 	public static void main (String[] args) {
 		
-		for (long n : new long[] {53813425671L}) 
+		for (long n : new long[] {5381L}) 
 			System.out.println(Prime.isPrime(n));	
 	}
 }

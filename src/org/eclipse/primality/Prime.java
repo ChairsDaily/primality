@@ -14,7 +14,12 @@ import java.util.List;
  * @author ChairsDaily
  * @license MIT
  * @email chairs.daily.2019@gmail.com
- */
+ * @references
+ * 	https://en.wikipedia.org/wiki/Primality_test#Simple_methods
+ * 	https://en.wikipedia.org/wiki/Fermat_primality_test
+ * 	https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
+ * 	https://en.wikipedia.org/wiki/Trial_division
+ */	
 public final class Prime {
 
 	private static ArrayList<Long> smallPrimes = new ArrayList<Long>(Arrays.asList(

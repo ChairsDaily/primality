@@ -4,9 +4,8 @@ primality testing for big numbers in Java - just exercising lang usage
 **to recompile source tree**
 ```
 $ javac src/org/eclipse/primality/Prime2.java
-$ javac src/org/eclipse/primality/Test.java
 ...
-$ java bin/org/eclipse/primality/Test
+$ bash runfile.sh
 ```
 
 **included**

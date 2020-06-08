@@ -3,7 +3,8 @@ primality testing for big numbers in Java - just exercising lang usage
 
 **to recompile source tree**
 ```
-$ sh build.sh
+$ javac src/org/eclipse/primality/Prime2.java
+$ javac src/org/eclipse/primality/Test.java
 ...
 $ java bin/org/eclipse/primality/Test
 ```
@@ -17,5 +18,5 @@ the former will run for numbers under a certain size `primality.Prime.threshold`
 ```java
 import primality.Prime2;
 ...
-    final boolean prime = Prime2.isPrime(3829138120L);
+final boolean prime = Prime2.isPrime(3829138120L);
 ```

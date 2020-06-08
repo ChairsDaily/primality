@@ -1,2 +1,2 @@
 #!/bin/bash
-java src/org/eclipse/primality/Test
+java bin/org/eclipse/primality/Test
